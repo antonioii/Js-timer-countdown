@@ -19,6 +19,18 @@ A simple Javascript Timer and Countdown WebApp
 - A pause button that will pause assign the paused status to the timer and stop counting.
    
   
-### Algorithm
+## Timer Algorithm
    
 It receives an input and transforms it into seconds, when the play button is activated it will use an intervalset function so that every second it increments or decrements the time value and displays it on the screen.
+   
+      
+---
+   
+### To be done:
+
+- [ ] Layout with its proper CSS
+- [ ] Interrogation button which displays instructions
+- [ ] Play/continue button which becomes a pause button
+- [ ] Pause button which becomes a play/continue button
+- [ ] Restart button which restarts the timer/page
+- [ ] The timer functionalities (timer increase and countdown decrease)
