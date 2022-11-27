@@ -12,11 +12,13 @@ A simple Javascript Timer and Countdown WebApp
 
 ## Requirements:
 
-- A play button that when clicked (or activated via space/enter) will check if there is any input in the time field and the timer is paused. If it exists and is not paused, it will start a countdown. If it does not exist and it is not paused, it will start a cumulative count up to 99:99:99 (hh:mm:ss format). If it is paused, it just turns into a continue button. When the countdown starts, it turns into a pause button.
+- A play button that when clicked (or activated via space/enter) will check if there is any input in the time field and also will check if the timer is paused. If it exists and is not paused, it will start a countdown. If it does not exist and it is not paused, it will start a cumulative count up to 99:99:99 (hh:mm:ss format). If it is paused, it just turns into a continue button. When the countdown starts, it turns into a pause button.
 
 - A restart button that will reset the timer.
 
 - A pause button that will pause assign the paused status to the timer and stop counting.
+
+- The small sound of a bell should be emitted when the count is completed.
    
   
 ## Timer Algorithm
