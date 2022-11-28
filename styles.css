@@ -1,0 +1,36 @@
+/*Font Family*/
+
+/*CSS Initial Resets*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Html background-img*/
+html {
+    background-image: url("./imgs/s2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 120%;
+    background-position-y: -500px;
+    background-position-x: -150px;
+}
+
+/*Basic Body Config*/
+body {    
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(84, 201, 48, 0.4);
+    justify-content: space-between;
+
+    
+}
+
+body>* {
+    text-align: center;
+    border: 2px solid red;
+}
