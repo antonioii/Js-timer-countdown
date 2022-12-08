@@ -25,6 +25,10 @@
     }
 
 /*Input field*/
+    article {
+        margin-bottom: auto;
+    }
+
     .timerFieldDisplay {    
         display: flex;
         justify-content: center;
