@@ -1,27 +1,57 @@
 /*Font Family*/
 
 /*CSS Initial Resets*/
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+    html {
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
 
 /*Basic Body Config*/
-body {    
-    margin: 0px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #03989e;
-    background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%), #03989e;
-    justify-content: space-between;
+    body {    
+        margin: 0px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #03989e;
+        background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%), #03989e;
+        justify-content: space-between;    
+    }
 
-    
-}
+    body, body>* {
+        text-align: center;
+        border: 2px solid red;
+    }
 
-body>* {
-    text-align: center;
-    border: 2px solid red;
-}
+/*Input field*/
+    .timerFieldDisplay {    
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+
+    input,
+    .dots {
+        border: none;
+        background-color: rgb(1, 76, 79);
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .dots {
+        display: flex;
+        align-items: center;
+    }
+
+    /*The place holder color*/
+    .number::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1; /*Firefox*/
+    }
+    .number:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+        color: white;
+    }
+    .number::-ms-input-placeholder{ /* Microsoft Edge */
+        color: white;
+    }
