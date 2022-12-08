@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <script src="./code.js" defer></script>
     <title>JS-TIMER</title>
 </head>
 <body>
@@ -21,17 +22,16 @@
 
 <article>
     <div id="timerContainer">
+
         <div class="timerField">
             <div class="timerFieldDisplay">
-                <input id="hour" class="number" type="number" placeholder="00" min="00" max="23">
+                <input id="hour" class="number" type="number" placeholder="00" min="00" max="23" maxlength="2">
                 <span class="dots">:</span>
-                <input id="minute" class="number" type="number" placeholder="00" min="00" max="59">
+                <input id="minute" class="number" type="number" placeholder="00" min="00" max="59" maxlength="2">
                 <span class="dots">:</span>
-                <input id="second" class="number" type="number" placeholder="00" min="00" max="59">
+                <input id="second" class="number" type="number" placeholder="00" min="00" max="59" maxlength="2">
             </div>    
-        </div>
-
-   
+        </div>   
 
         <div class="timerField">
             <div id="buttonsBox">
@@ -47,6 +47,5 @@
     <h2>Copyright ©</h2>
 </footer>
     
-<script src="./code.js"></script>
 </body>
 </html>

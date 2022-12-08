@@ -1,4 +1,5 @@
 /*Font Family*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
 /*CSS Initial Resets*/
     html {
@@ -23,6 +24,11 @@
         text-align: center;
         border: 2px solid red;
     }
+
+/*Header*/
+header {
+    font-family: 'Noto Color Emoji', sans-serif;
+}
 
 /*Input field*/
     article {
@@ -59,3 +65,8 @@
     .number::-ms-input-placeholder{ /* Microsoft Edge */
         color: white;
     }
+
+/*Timer container*/
+#buttonsBox {
+    margin-top: 10px;
+}
