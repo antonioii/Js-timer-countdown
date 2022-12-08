@@ -8,23 +8,14 @@ html {
     box-sizing: inherit;
 }
 
-/*Html background-img*/
-html {
-    background-image: url("./imgs/s2.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 120%;
-    background-position-y: -500px;
-    background-position-x: -150px;
-}
-
 /*Basic Body Config*/
 body {    
     margin: 0px;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(84, 201, 48, 0.4);
+    background-color: #03989e;
+    background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%), #03989e;
     justify-content: space-between;
 
     
