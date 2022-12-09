@@ -1,5 +1,6 @@
 /*Font Family*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
 /*CSS Initial Resets*/
     html {
@@ -45,8 +46,15 @@ header {
     .dots {
         border: none;
         background-color: rgb(1, 76, 79);
+        color: white;
         text-align: center;
         font-size: 3em;
+        font-family: 'Space Mono', serif;
+    }
+
+    input {
+        width: 2em;
+        height: 2em;
     }
 
     .dots {
@@ -54,16 +62,19 @@ header {
         align-items: center;
     }
 
-    /*The place holder color*/
+    /*The place holder color and font-family in different browsers*/
     .number::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: white;
         opacity: 1; /*Firefox*/
+        font-family: 'Space Mono', serif;
     }
     .number:-ms-input-placeholder{ /* Internet Explorer 10-11 */
         color: white;
+        font-family: 'Space Mono', serif;
     }
     .number::-ms-input-placeholder{ /* Microsoft Edge */
         color: white;
+        font-family: 'Space Mono', serif;
     }
 
 /*Timer container*/
