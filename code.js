@@ -85,15 +85,21 @@ class CountdownTimer {
 
     this.intervalId = setInterval(() => {
       this.time--;
-      // Update the input fields with the remaining time:
-      this.hourField.value = Math.floor(this.time / 3600);
-      this.minuteField.value = Math.floor((this.time % 3600) / 60);
-      this.secondField.value = this.time % 60;
-      
-      //if it reaches 00:00:00 should stop
-      if (this.time === 0) {
-        this.pause();
+
+    // If the remaining time is less than 0, reset it to 0
+    if (this.time < 0) {
+        this.time = 0;
       }
+  
+      // Update the input fields with the remaining time
+      this.hourField.value = `${Math.floor(this.time / 3600)}`.padStart(2, '0');
+      this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
+      this.secondField.value = `${this.time % 60}`.padStart(2, '0');
+      
+    //if it reaches 00:00:00 should stop
+    if (this.time === 0) {
+        this.pause();
+    }
       
     }, 1000);
   }
@@ -105,9 +111,9 @@ class CountdownTimer {
   reset() {
     this.pause();
     this.time = 0;
-    this.hourField.value = '00';
-    this.minuteField.value = '00';
-    this.secondField.value = '00';
+    this.hourField.value = '';
+    this.minuteField.value = '';
+    this.secondField.value = '';
   }
 }
 
