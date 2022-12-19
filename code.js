@@ -42,11 +42,14 @@ function timerStart() {
 
 //When pause button is triggered:
 function resumePlay(){
+    //Resume back to play button:
     playBtn = document.createElement('button');
     playBtn.id = 'playBtn';
     buttonsBox.removeChild(pauseButton);
     buttonsBox.insertBefore(playBtn, buttonsBox.firstChild);
     setPlayBtnListeners(playBtn);
+
+    //Changes the variables in order to make the count continue:
 }
 
 
