@@ -1,5 +1,5 @@
+//Setting how the numbers can be inputted
 let numbers = document.querySelectorAll('.number');
-
 numbers.forEach(element => {
     element.addEventListener('keypress', function(event) {
         let value = element.value;
