@@ -30,9 +30,10 @@ It receives an input and transforms it into seconds, when the play button is act
    
 ### To be done:
 
-- [ ] Layout with its proper CSS
+- [x] Layout with its proper CSS
 - [ ] Interrogation button which displays instructions
-- [ ] Play/continue button which becomes a pause button
-- [ ] Pause button which becomes a play/continue button
-- [ ] Restart button which restarts the timer/page
+- [x] Play/continue button which becomes a pause button
+- [x] Pause button which becomes a play/continue button
+- [x] Restart button which restarts the timer/page
 - [ ] The timer functionalities (timer increase and countdown decrease)
+- [ ] Correct the bug when it's reseted while its couting

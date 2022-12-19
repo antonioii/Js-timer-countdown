@@ -11,7 +11,7 @@ numbers.forEach(element => {
     })
 });
 
-//Play btn:
+//Play button functionalities:
 let buttonsBox = document.querySelector("#buttonsBox"); 
 let playBtn = document.getElementById("playBtn");
 setPlayBtnListeners(playBtn);
@@ -21,7 +21,9 @@ let pauseIcon;
 let pauseBar1;
 let pauseBar2;
 function timerStart() {
-    //Substitue to a pause btn:
+    //Starts the timer:
+	timer.start();
+    //Then, substitue the playBtn o a pause btn:
     buttonsBox.removeChild(playBtn);  
     pauseButton = document.createElement("button");
     pauseButton.classList.add("pause-button");  
@@ -36,24 +38,21 @@ function timerStart() {
     pauseButton.appendChild(pauseIcon);
     buttonsBox.insertBefore(pauseButton, buttonsBox.firstChild);
     pauseButton.addEventListener("click", resumePlay);
-    
-    //Starts the timer:
 }
 
-//When pause button is triggered:
+//Pause button functionalities:
 function resumePlay(){
-    //Resume back to play button:
+    //Pauses the timer:
+	timer.pause();
+    //Then change back to a play button:
     playBtn = document.createElement('button');
     playBtn.id = 'playBtn';
     buttonsBox.removeChild(pauseButton);
     buttonsBox.insertBefore(playBtn, buttonsBox.firstChild);
-    setPlayBtnListeners(playBtn);
-
-    //Changes the variables in order to make the count continue:
+    setPlayBtnListeners(playBtn);    
 }
 
-
-//Set the playBtn listeners
+//Function to set the playBtn listeners
 function setPlayBtnListeners(playBtn) {
     playBtn.addEventListener("click", timerStart);
     numbers.forEach(element => {
@@ -65,3 +64,51 @@ function setPlayBtnListeners(playBtn) {
     });
 }
 
+// Reset the timer when the "Reset" button is clicked
+document.getElementById('reset').addEventListener('click', () => {
+    timer.reset();
+  });
+
+//Class Timer:
+class CountdownTimer {
+  constructor() {
+    this.time = 0;
+    this.intervalId = null;
+    this.hourField = document.getElementById('hour');
+    this.minuteField = document.getElementById('minute');
+    this.secondField = document.getElementById('second');
+  }
+
+  start() {
+    // Turn the inputed time to seconds:
+    this.time = (this.hourField.value * 3600) + (this.minuteField.value * 60) + (this.secondField.value * 1);
+
+    this.intervalId = setInterval(() => {
+      this.time--;
+      // Update the input fields with the remaining time:
+      this.hourField.value = Math.floor(this.time / 3600);
+      this.minuteField.value = Math.floor((this.time % 3600) / 60);
+      this.secondField.value = this.time % 60;
+      
+      //if it reaches 00:00:00 should stop
+      if (this.time === 0) {
+        this.pause();
+      }
+      
+    }, 1000);
+  }
+
+  pause() {
+    clearInterval(this.intervalId);
+  }
+
+  reset() {
+    this.pause();
+    this.time = 0;
+    this.hourField.value = '00';
+    this.minuteField.value = '00';
+    this.secondField.value = '00';
+  }
+}
+
+const timer = new CountdownTimer();
