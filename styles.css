@@ -100,13 +100,46 @@
             border-color: transparent transparent transparent rgb(0,0,0);
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 55%;
             transform: translate(-50%, -50%);
         }
         #playBtn:active {
             transform: scale(0.75);
             transition: transform 0.3s;
         }
+
+        .pause-button {
+            outline: 1px solid black;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }          
+        .pause-icon {
+            display: flex;
+            flex-direction: row;
+        }
+        .pause-bar {
+            width: 6px;
+            height: 20px;
+            background-color: black;
+            margin: 2px 0;
+        }          
+        .pause-bar:first-of-type {
+            margin-right: 3px;
+        }          
+        .pause-bar:last-of-type {
+            margin-left: 3px;
+        }
+        .pause-button:active {
+            transform: scale(0.75);
+            transition: transform 0.3s;
+          }
+          
 
         svg {
             width: 42px;
