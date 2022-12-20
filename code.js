@@ -27,16 +27,32 @@ icon.addEventListener("click", () => {
   }
 });
 
-/*Play button functionalities:
+/*Initializing initial parameters:
 */
+//Play button:
 let buttonsBox = document.querySelector("#buttonsBox"); 
 let playBtn = document.getElementById("playBtn");
 setPlayBtnListeners(playBtn);
+//Reset button functionalities:
+document.getElementById('reset').addEventListener('click', () => {
+  timer.reset();
+});
+//Windows listeners:
+window.addEventListener("keydown", function(event) {
+  if((event.key === "Enter") && ( document.getElementById("playBtn") !== null)) {
+    document.getElementById("playBtn").click();
+  } else if (event.key === "Enter" && (document.querySelector(".pause-button") !== null)){
+    document.querySelector(".pause-button").click();
+  }
+});
+//Declare initial empty pause elements:
 let pauseButton;
 let pauseIcon;
 let pauseBar1;
 let pauseBar2;
-function timerStart() {
+//Function to set the playBtn listeners
+function setPlayBtnListeners(playBtn) {
+    playBtn.addEventListener("click", function() {      
     //Starts the timer:
     timer.time = (timer.hourField.value * 3600) + (timer.minuteField.value * 60) + (timer.secondField.value * 1);
     if(timer.time == 0) {
@@ -44,8 +60,7 @@ function timerStart() {
     } else {
       timer.start();
     }
-
-    //Then, substitue the playBtn to a pause btn:
+    //Then, substitue the #playBtn button to a .pause-button button:
     buttonsBox.removeChild(playBtn);  
     pauseButton = document.createElement("button");
     pauseButton.classList.add("pause-button");  
@@ -58,40 +73,23 @@ function timerStart() {
         pauseIcon.appendChild(pauseBar1);  
         pauseIcon.appendChild(pauseBar2);  
     pauseButton.appendChild(pauseIcon);
-    buttonsBox.insertBefore(pauseButton, buttonsBox.firstChild);
+    buttonsBox.insertBefore(pauseButton, buttonsBox.firstChild);    
+    //And, add an eventlistener to this pause button:
     pauseButton.addEventListener("click", resumePlay);
-}
-
-//Function to set the playBtn listeners
-function setPlayBtnListeners(playBtn) {
-  playBtn.addEventListener("click", timerStart);
-  numbers.forEach(element => {
-      element.addEventListener("keydown", function(event) {
-          if (event.keyCode === 13) {
-          timerStart();
-          }
-      });    
-  });
+    });
 }
 
 /*Pause button functionalities:
 */
 function resumePlay(){
-    //Pauses the timer:
-	timer.pause();
-    //Then change back to a play button:
+	  timer.pause();
+    //Then change the button back to a #playBtn:
     playBtn = document.createElement('button');
     playBtn.id = 'playBtn';
     buttonsBox.removeChild(pauseButton);
     buttonsBox.insertBefore(playBtn, buttonsBox.firstChild);
-    setPlayBtnListeners(playBtn);    
+    setPlayBtnListeners(playBtn);
 }
-
-/* Reset button functionalities
-*/
-document.getElementById('reset').addEventListener('click', () => {
-    timer.reset();
-  });
 
 /*Class Timer:
 */
@@ -128,7 +126,6 @@ class CountdownTimer {
       
     }, 1000);
   }
-
   reverse() {
     // Turn the inputed time to seconds:
     this.time = (this.hourField.value * 3600) + (this.minuteField.value * 60) + (this.secondField.value * 1);
@@ -139,12 +136,10 @@ class CountdownTimer {
       this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
       this.secondField.value = `${this.time % 60}`.padStart(2, '0');      
     }, 1000);
-  } 
-
+  }
   pause() {
     clearInterval(this.intervalId);
   }
-
   reset() {
     let checkPlayBtn = !(document.querySelector('#playBtn') === null);
     let checkPauseBtn = !(document.querySelector('.pause-button') === null);
@@ -160,7 +155,6 @@ class CountdownTimer {
         this.secondField.value = '';
       }
     } else if (checkPauseBtn) { //se tem pauseButton
-      console.log("Pause Buttton found");
       //ativar resumePlay
       resumePlay();
     }
@@ -168,7 +162,6 @@ class CountdownTimer {
     this.hourField.value = '';
     this.minuteField.value = '';
     this.secondField.value = ''; 
-
   }
 }
 
