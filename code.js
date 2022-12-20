@@ -13,7 +13,7 @@ icon.addEventListener("click", () => {
   }
 });
 
-/*Class Timer:
+/*Class Countdown Timer:
 */
 class CountdownTimer {
   constructor() {
