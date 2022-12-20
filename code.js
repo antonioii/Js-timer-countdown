@@ -1,4 +1,5 @@
-//Setting how the numbers can be inputted:
+/*Setting how the numbers can be inputted:
+*/
 let numbers = document.querySelectorAll('.number');
 numbers.forEach(element => {
     element.addEventListener('keypress', function(event) {
@@ -11,11 +12,11 @@ numbers.forEach(element => {
     })
 });
 
-//Play button functionalities:
+/*Play button functionalities:
+*/
 let buttonsBox = document.querySelector("#buttonsBox"); 
 let playBtn = document.getElementById("playBtn");
 setPlayBtnListeners(playBtn);
-
 let pauseButton;
 let pauseIcon;
 let pauseBar1;
@@ -46,7 +47,20 @@ function timerStart() {
     pauseButton.addEventListener("click", resumePlay);
 }
 
-//Pause button functionalities:
+//Function to set the playBtn listeners
+function setPlayBtnListeners(playBtn) {
+  playBtn.addEventListener("click", timerStart);
+  numbers.forEach(element => {
+      element.addEventListener("keydown", function(event) {
+          if (event.keyCode === 13) {
+          timerStart();
+          }
+      });    
+  });
+}
+
+/*Pause button functionalities:
+*/
 function resumePlay(){
     //Pauses the timer:
 	timer.pause();
@@ -58,24 +72,14 @@ function resumePlay(){
     setPlayBtnListeners(playBtn);    
 }
 
-//Function to set the playBtn listeners
-function setPlayBtnListeners(playBtn) {
-    playBtn.addEventListener("click", timerStart);
-    numbers.forEach(element => {
-        element.addEventListener("keydown", function(event) {
-            if (event.keyCode === 13) {
-            timerStart();
-            }
-        });    
-    });
-}
-
-// Reset the timer when the "Reset" button is clicked
+/* Reset button functionalities
+*/
 document.getElementById('reset').addEventListener('click', () => {
     timer.reset();
   });
 
-//Class Timer:
+/*Class Timer:
+*/
 class CountdownTimer {
   constructor() {
     this.time = 0;
@@ -121,8 +125,7 @@ class CountdownTimer {
       this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
       this.secondField.value = `${this.time % 60}`.padStart(2, '0');      
     }, 1000);
-  }
-  
+  } 
 
   pause() {
     clearInterval(this.intervalId);
@@ -139,4 +142,6 @@ class CountdownTimer {
   }
 }
 
+/* Create a new object countdown timer:
+*/
 const timer = new CountdownTimer();
