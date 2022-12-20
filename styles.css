@@ -1,9 +1,9 @@
-/*Font Family*/
+/*Font Family:*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
 
-/*Keyframes*/
+/*Keyframes:*/
 @keyframes fadeIn {
     from {
       opacity: 0;
@@ -22,7 +22,7 @@
     }
   }
 
-/*CSS Initial Resets*/
+/*CSS Initial Resets:*/
     html {
         box-sizing: border-box;
     }
@@ -30,7 +30,7 @@
         box-sizing: inherit;
     }
 
-/*Basic Body Config*/
+/*Basic Body Config:*/
     body {    
         margin: 0px;
         height: 100vh;
@@ -46,35 +46,26 @@
         border: 2px solid red;
     }
 
-/*Header*/
+/*Header:*/
     header {
-        font-family: 'Noto Color Emoji', sans-serif;
-    }
-
-    .interrogationBtn {
-        margin-bottom: 10px;
-    }
-    #textInstructions {
-        opacity: 0;
-        animation: none;
-        text-align: left;
-        font-family: 'Chivo Mono', monospace;
-        font-size: medium;
-    }
-    #textInstructions>p {
-        text-align: center;
-    }
-    ol {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        font-family: 'Noto Color Emoji', sans-serif;
+        padding: 0px;
     }
-    li {
-      width: 40em;
+    #appTitle {
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    header>*{
+        outline: 2px solid red;
     }
 
-/*Input field*/
+    #interrogationBtn {
+        margin-bottom: 10px;
+    }
+
+/*Input field:*/
     article {
         margin-bottom: auto;
     }
@@ -120,7 +111,7 @@
             font-family: 'Space Mono', serif;
         }
 
-/*Timer container*/
+/*Timer container:*/
     #buttonsBox {
         margin-top: 10px;
         display: flex;
@@ -193,3 +184,26 @@
             transform: scale(0.75);
             transition: transform 0.3s;
         }
+
+/*Instructions:*/
+    #textInstructions {
+        opacity: 0;
+        animation: none;
+        text-align: left;
+        font-family: 'Chivo Mono', monospace;
+        font-size: medium;
+    }
+    #textInstructions>p {
+        text-align: center;
+    }
+    ol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    li {
+    width: 40em;
+    }
+
+/*Footer*/
