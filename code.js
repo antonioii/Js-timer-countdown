@@ -108,7 +108,7 @@ class CountdownTimer {
       
     //if it reaches 00:00:00 should reset
     if (this.time === 0) {
-        this.time.reset();
+        this.reset();
     }
       
     }, 1000);
@@ -131,15 +131,34 @@ class CountdownTimer {
   }
 
   reset() {
-    this.pause();
+    let checkPlayBtn = !(document.querySelector('#playBtn') === null);
+    let checkPauseBtn = !(document.querySelector('.pause-button') === null);
+    if(checkPlayBtn) { //se tem playBtn
+      console.log("Play Buttton found");
+      if(this.time == 0) {
+        console.log("Your countdown is already reset. Don't try to reset it again!")
+      } else {
+        this.pause();
+        this.time = 0;
+        this.hourField.value = '';
+        this.minuteField.value = '';
+        this.secondField.value = '';
+      }
+    } else if (checkPauseBtn) { //se tem pauseButton
+      console.log("Pause Buttton found");
+      //ativar resumePlay
+      resumePlay();
+    }
     this.time = 0;
     this.hourField.value = '';
     this.minuteField.value = '';
-    this.secondField.value = '';
-    //resumePlay();
+    this.secondField.value = ''; 
 
   }
 }
+
+
+
 
 /* Create a new object countdown timer:
 */
