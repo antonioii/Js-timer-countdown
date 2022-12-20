@@ -36,12 +36,14 @@ class CountdownTimer {
         })
     });
 
-    //Windows listeners to simulate clicks when enter is pressed:
+    //Windows listeners to simulates keyboard operations instead of clicks:
     window.addEventListener("keydown", event => {
       if((event.key === "Enter") && (document.getElementById("playBtn") !== null)) {
         document.getElementById("playBtn").click();
       } else if (event.key === "Enter" && (document.querySelector(".pause-button") !== null)){
         document.querySelector(".pause-button").click();
+      } else if (event.key === "Escape") {
+        this.reset();
       }
     });
 
