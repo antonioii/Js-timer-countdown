@@ -57,6 +57,7 @@ class CountdownTimer {
     this.pauseBar1 = null;
     this.pauseBar2 = null;
 
+    //Set the play button listeners:
     this.setPlayBtnListeners();
 
     //Reset button:
