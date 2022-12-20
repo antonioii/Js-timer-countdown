@@ -157,9 +157,6 @@ class CountdownTimer {
   }
 }
 
-
-
-
 /* Create a new object countdown timer:
 */
 const timer = new CountdownTimer();

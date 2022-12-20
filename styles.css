@@ -31,6 +31,10 @@
         font-family: 'Noto Color Emoji', sans-serif;
     }
 
+    .interrogationBtn {
+        margin-bottom: 10px;
+    }
+
 /*Input field*/
     article {
         margin-bottom: auto;
