@@ -12,6 +12,21 @@ numbers.forEach(element => {
     })
 });
 
+/* Set the interrogation mark button functionality
+*/
+const icon = document.getElementById("interrogationBtn");
+const text = document.getElementById("textInstructions");
+let textHidden = true;
+icon.addEventListener("click", () => {
+  textHidden = !textHidden;
+  if (textHidden) {
+    text.style.animation = "fadeOut 0.5s forwards";
+  }
+  else {
+    text.style.animation = "fadeIn 0.5s forwards";
+  }
+});
+
 /*Play button functionalities:
 */
 let buttonsBox = document.querySelector("#buttonsBox"); 

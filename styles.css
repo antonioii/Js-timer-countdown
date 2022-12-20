@@ -2,6 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
+/*Keyframes*/
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
 /*CSS Initial Resets*/
     html {
         box-sizing: border-box;
@@ -33,6 +52,10 @@
 
     .interrogationBtn {
         margin-bottom: 10px;
+    }
+    #textInstructions {
+        opacity: 0;
+        animation: none;
     }
 
 /*Input field*/
