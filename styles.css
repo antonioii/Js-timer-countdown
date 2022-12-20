@@ -205,3 +205,17 @@
     }
 
 /*Footer*/
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    #autorFoot,
+    #githubFoot {
+        font-size: medium;
+        margin: 0px 10px;
+        color: rgb(4,200,208, 80%);
+    }
+    #githubFoot {
+        color: rgb(4,200,208);
+    }
