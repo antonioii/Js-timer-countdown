@@ -53,12 +53,10 @@
         font-family: 'Noto Color Emoji', sans-serif;
         padding: 0px;
     }
+    
     #appTitle {
         margin-top: 10px;
         margin-bottom: 0px;
-    }
-    header>*{
-        outline: 2px solid red;
     }
 
     #interrogationBtn {
