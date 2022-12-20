@@ -1,6 +1,7 @@
 /*Font Family*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
 
 /*Keyframes*/
 @keyframes fadeIn {
@@ -40,7 +41,7 @@
         justify-content: space-between;    
     }
 
-    body, body>* {
+    body{
         text-align: center;
         border: 2px solid red;
     }
@@ -56,6 +57,21 @@
     #textInstructions {
         opacity: 0;
         animation: none;
+        text-align: left;
+        font-family: 'Chivo Mono', monospace;
+        font-size: medium;
+    }
+    #textInstructions>p {
+        text-align: center;
+    }
+    ol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    li {
+      width: 40em;
     }
 
 /*Input field*/
