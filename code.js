@@ -117,9 +117,14 @@ class CountdownTimer {
         this.hourField.value = `${Math.floor(this.time / 3600)}`.padStart(2, '0');
         this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
         this.secondField.value = `${Math.floor(this.time % 60)}`.padStart(2, '0');
-        //if it reaches 00:00:00 should reset:
+        //if it reaches 00:00:00 should reset initial variables and play a reseted alarm:
         if (this.time === 0) {
           this.reset();
+          document.getElementById('alarmSound').currentTime = 0;
+          document.getElementById('alarmSound').play();
+          setTimeout(function() {
+            document.getElementById('alarmSound').pause();
+          }, 3000);
         }
       }, 1000);
   }
@@ -156,7 +161,7 @@ class CountdownTimer {
       // Update the input fields with the time
       this.hourField.value = `${Math.floor(this.time / 3600)}`.padStart(2, '0');
       this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
-      this.secondField.value = `${this.time % 60}`.padStart(2, '0');      
+      this.secondField.value = `${this.time % 60}`.padStart(2, '0'); 
     }, 1000);
   }
 
