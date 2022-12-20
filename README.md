@@ -35,5 +35,5 @@ It receives an input and transforms it into seconds, when the play button is act
 - [x] Play/continue button which becomes a pause button
 - [x] Pause button which becomes a play/continue button
 - [x] Restart button which restarts the timer/page
-- [ ] The timer functionalities (timer increase and countdown decrease)
-- [ ] Correct the bug when it's reseted while its couting
+- [x] The timer functionalities (timer increase and countdown decrease)
+- [x] Correct the bug when it's reseted while its couting
