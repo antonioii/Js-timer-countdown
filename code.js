@@ -22,7 +22,13 @@ let pauseBar1;
 let pauseBar2;
 function timerStart() {
     //Starts the timer:
-	timer.start();
+    timer.time = (timer.hourField.value * 3600) + (timer.minuteField.value * 60) + (timer.secondField.value * 1);
+    if(timer.time == 0) {
+      timer.reverse();
+    } else {
+      timer.start();
+    }
+
     //Then, substitue the playBtn o a pause btn:
     buttonsBox.removeChild(playBtn);  
     pauseButton = document.createElement("button");
@@ -103,6 +109,23 @@ class CountdownTimer {
       
     }, 1000);
   }
+
+  reverse() {
+    // Turn the inputed time to seconds:
+    this.time = (this.hourField.value * 3600) + (this.minuteField.value * 60) + (this.secondField.value * 1);
+    this.intervalId = setInterval(() => {
+      this.time++;  
+      // Update the input fields with the time
+      this.hourField.value = `${Math.floor(this.time / 3600)}`.padStart(2, '0');
+      this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
+      this.secondField.value = `${this.time % 60}`.padStart(2, '0');      
+    //if it reaches 00:00:00 should stop
+    if (this.time === 0) {
+        this.pause();
+    }      
+    }, 1000);
+  }
+  
 
   pause() {
     clearInterval(this.intervalId);
