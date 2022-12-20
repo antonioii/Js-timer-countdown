@@ -45,7 +45,7 @@ function timerStart() {
       timer.start();
     }
 
-    //Then, substitue the playBtn o a pause btn:
+    //Then, substitue the playBtn to a pause btn:
     buttonsBox.removeChild(playBtn);  
     pauseButton = document.createElement("button");
     pauseButton.classList.add("pause-button");  
