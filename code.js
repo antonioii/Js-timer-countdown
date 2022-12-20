@@ -106,10 +106,9 @@ class CountdownTimer {
       this.minuteField.value = `${Math.floor((this.time % 3600) / 60)}`.padStart(2, '0');
       this.secondField.value = `${this.time % 60}`.padStart(2, '0');
       
-    //if it reaches 00:00:00 should stop
+    //if it reaches 00:00:00 should reset
     if (this.time === 0) {
-        this.pause();
-        resumePlay();
+        this.time.reset();
     }
       
     }, 1000);
@@ -137,7 +136,7 @@ class CountdownTimer {
     this.hourField.value = '';
     this.minuteField.value = '';
     this.secondField.value = '';
-    resumePlay();
+    //resumePlay();
 
   }
 }
