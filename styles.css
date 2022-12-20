@@ -188,7 +188,7 @@
         animation: none;
         text-align: left;
         font-family: 'Chivo Mono', monospace;
-        font-size: medium;
+        font-size: 14px;
     }
     #textInstructions>p {
         text-align: center;
@@ -200,7 +200,8 @@
         align-items: center;
     }
     li {
-    width: 40em;
+        margin: 2px 0px;
+        width: 40em;
     }
 
 /*Footer*/
