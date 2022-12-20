@@ -43,7 +43,6 @@
 
     body{
         text-align: center;
-        border: 2px solid red;
     }
 
 /*Header:*/
@@ -53,7 +52,7 @@
         font-family: 'Noto Color Emoji', sans-serif;
         padding: 0px;
     }
-    
+
     #appTitle {
         margin-top: 10px;
         margin-bottom: 0px;
