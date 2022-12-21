@@ -84,6 +84,7 @@
     }
 
     input {
+        overflow: visible;
         width: 2em;
         height: 2em;
     }
