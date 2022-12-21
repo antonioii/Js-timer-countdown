@@ -1,6 +1,6 @@
 # Js-timer-countdown
 
-A simple Javascript Timer and Countdown WebApp
+A Countdown Timer webapp built using:
    
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
@@ -8,32 +8,48 @@ A simple Javascript Timer and Countdown WebApp
 
 ## Sketch  
 
-![Sketch](./imgs/Timer.png)  
+![Sketch](./imgs/Timer.gif)  
+   
 
-## Requirements:
+## User instructions:
 
-- A play button that when clicked (or activated via space/enter) will check if there is any input in the time field and also will check if the timer is paused. If it exists and is not paused, it will start a countdown. If it does not exist and it is not paused, it will start a cumulative count up to 99:99:99 (hh:mm:ss format). If it is paused, it just turns into a continue button. When the countdown starts, it turns into a pause button.
+1. Enter a time in the format hh:mm:ss (e.g. 00:03:00 for 3 minutes) in the timer field above.
+2. You can leave it blank (e.g 00:00:00) to an incremental counter timer.
+3. Click in the "Play" button or press "Enter" in order to start, or resume the count.
+4. Press "Enter" again to pause the countdown, or click the "Pause" button.
+5. Keep in mind the incremental timer when paused and resumed will start a coutdown.
+6. To reset the countdown, click the "Reset" button or press "Esc". This will reset the time to 00:00:00.
+* Note: The timer will automatically stop when it reaches 0.
 
-- A restart button that will reset the timer.
+## Initial Requirements:
 
-- A pause button that will pause assign the paused status to the timer and stop counting.
+- A "Play" button that when clicked (or activated via an "Enter" pressed) will check if there is any input in the time field
+and also will check if the timer is paused. If it exists and is not paused, it will start a countdown. If it does not exist
+and it is not paused, it will start a cumulative count up to 99:59:59 (hh:mm:ss format).
 
-- The small sound of a bell should be emitted when the count is completed.
+- A "Pause" function and a "Resume" function.
+
+- The buttons must change in the following way: when "Play" is pressed, it must become "Pause", when "Pause" is pressed, it 
+must become a "Play" button.
+
+- A "Reset" button that will reset the timer.
+
+- The sound of a bell should be emitted when the count is completed.
    
   
 ## Timer Algorithm
    
-It receives an input and transforms it into seconds, when the play button is activated it will use an intervalset function so that every second it increments or decrements the time value and displays it on the screen.
+- An object countdown time;
+
+- It receives an input and transforms it into seconds, when the play button is activated it will use an intervalset 
+function so that every second it increments or decrements the time value and displays it on the screen.
    
       
 ---
    
-### To be done:
+### Extra Features:
 
-- [x] Layout with its proper CSS
-- [ ] Interrogation button which displays instructions
-- [x] Play/continue button which becomes a pause button
-- [x] Pause button which becomes a play/continue button
-- [x] Restart button which restarts the timer/page
-- [x] The timer functionalities (timer increase and countdown decrease)
-- [x] Correct the bug when it's reseted while its couting
+* Now, the "Enter" key act as a starter, resume and also a pause button;
+
+* I considered adding a countdown/incremental timer toggle, but it'd not meet original requirements. 
+A boolean control variable could be created and passed as a condition in the start() method.
