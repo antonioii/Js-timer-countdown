@@ -225,12 +225,11 @@
         /*Header:*/
         header {
             flex-direction: row;
+            justify-content: space-around;
         }
-
         #appTitle {
             margin-top: 0px;
         }
-
         #interrogationBtn {
             margin-bottom: 0px;
         }
@@ -238,44 +237,28 @@
         /*Input field:*/
         .timerFieldDisplay {
             flex-direction: row;
-        }
-        input {
-            width: auto;
-            height: auto;
-            font-size: 2em;
-        }
-        .dots {
-            margin: 0 5px;
-        }
+        }       
 
         /*Timer container:*/
         #buttonsBox {
             flex-direction: row;
         }
-            /*Buttons*/
-            #playBtn,
-            .pause-button,
-            #stopBtn {
-                width: 30px;
-                height: 30px;
-            }
-            #playBtn:before {
-                border-width: 8px 0 8px 8px;
-            }
-            .pause-button:before,
-            .pause-button:after {
-                border-width: 8px;
-            }
-            #stopBtn:before,
-            #stopBtn:after {
-                width: 50%;
-                height: 50%;
-            }
+        #textInstructions {
+            font-size: 13px;
+            
+        }
+        #textInstructions>p{
+            margin: 5px;
+            text-shadow: 0 0 3px rgb(255, 255, 255, 70%), 0 0 5px rgb(4,200,208);
+        }
+        li {
+            margin: 2px 0px;
+            width: 300px;
+        }
+
         /*Footer*/
         #autorFoot,
         #githubFoot {
             font-size: small;
-            margin: 0px 10px;
-            color: rgb(4,200,208, 80%);
         }
     }
