@@ -54,3 +54,11 @@ to increment or decrement the time value by 1 second and display it on the scree
 * I considered adding a countdown/stopwatch timer toggle, but it'd not meet original requirements. 
 A boolean control variable could be created and passed as a condition in the start() method in order
 to build such feature.
+   
+## Possible future updates:
+   
+* Button to translate instructions.
+* Make a button to able/disable the alarm sound (especially in order to make the sound plays properly in all iOS systems
+which, by default, block non pre-approved sound plays).
+* An alternative approach to the above could be to play and pause a mute sound on page load using a touch event, then 
+assign an alarm sound to it which will play when the timer reaches zero.
