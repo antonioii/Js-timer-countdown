@@ -237,6 +237,10 @@
         /*Input field:*/
         .timerFieldDisplay {
             flex-direction: row;
+        }
+        input,
+        .dots {
+            font-size: 2.5em;
         }       
 
         /*Timer container:*/
