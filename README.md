@@ -14,18 +14,18 @@ A Countdown Timer webapp built using:
 ## User instructions:
 
 1. Enter a time in the format hh:mm:ss (e.g. 00:03:00 for 3 minutes) in the timer field above.
-2. You can leave it blank (e.g 00:00:00) to an incremental counter timer.
+2. You can leave it blank (e.g 00:00:00) to an incremental counter timer (stopwatch).
 3. Click in the "Play" button or press "Enter" in order to start, or resume the count.
 4. Press "Enter" again to pause the countdown, or click the "Pause" button.
-5. Keep in mind the incremental timer when paused and resumed will start a coutdown.
+5. Keep in mind the incremental timer (stopwatch) when paused and resumed will start a coutdown.
 6. To reset the countdown, click the "Reset" button or press "Esc". This will reset the time to 00:00:00.
-* Note: The timer will automatically stop when it reaches 0.
+* Note: The countdown timer will automatically stop when it reaches 0.
 
 ## Initial Requirements:
 
 - A "Play" button that when clicked (or activated via an "Enter" pressed) will check if there is any input in the time field
 and also will check if the timer is paused. If it exists and is not paused, it will start a countdown. If it does not exist 
-(e.g 00:00:00) and the timer is not paused, it will start a cumulative count up to 99:59:59 (hh:mm:ss format).
+(e.g 00:00:00) and the timer is not paused, it will start a cumulative count up to 99:59:59 (hh:mm:ss format) as a stopwatch.
 
 - A "Pause" function and a "Resume" function.
 
@@ -39,7 +39,7 @@ must become a "Play" button.
   
 ## Timer Algorithm
    
-- An object representing countdown time is created.
+- An object representing countdown timer is created.
 
 - It receives an input and transforms it into seconds, when the play button is activated, an intervalset function is used
 to increment or decrement the time value by 1 second and display it on the screen at regular intervals.
@@ -51,5 +51,6 @@ to increment or decrement the time value by 1 second and display it on the scree
 
 * The "Enter" key now acts as a starter, resumer, and pauser button.
 
-* I considered adding a countdown/incremental timer toggle, but it'd not meet original requirements. 
-A boolean control variable could be created and passed as a condition in the start() method.
+* I considered adding a countdown/stopwatch timer toggle, but it'd not meet original requirements. 
+A boolean control variable could be created and passed as a condition in the start() method in order
+to build such feature.
