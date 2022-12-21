@@ -255,6 +255,9 @@
 
 
         /*Timer container:*/
+        #playBtn {
+            outline: 0px;
+        }
         #buttonsBox {
             flex-direction: row;
         }
