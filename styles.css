@@ -90,6 +90,7 @@
     }
 
     .dots {
+        overflow: visible;
         display: flex;
         align-items: center;
     }
@@ -224,7 +225,7 @@
 /*Media Queries:*/
     @media only screen and (max-width: 600px) {
         body {
-            flex-wrap: wrap;
+           flex-wrap: wrap;
         }
 
         /*Header:*/
@@ -243,16 +244,25 @@
         /*Input field:*/
         .timerFieldDisplay {
             flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
         }
         input,
         .dots {
+            padding: 0px;
+            flex: 1 1 auto;
             font-size: 2.5em;
         }
         input {
             width: fit-content;
             height: fit-content;
         }
-
+        .dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         /*Timer container:*/
         #playBtn {
