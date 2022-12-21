@@ -222,10 +222,6 @@
 
 /*Media Queries:*/
     @media only screen and (max-width: 600px) {
-        body,
-        body>* {
-           outline: 2px solid red;
-        }
         body {
             flex-wrap: wrap;
         }
