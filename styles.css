@@ -222,6 +222,14 @@
 
 /*Media Queries:*/
     @media only screen and (max-width: 600px) {
+        body,
+        body>* {
+           outline: 2px solid red;
+        }
+        body {
+            flex-wrap: wrap;
+        }
+
         /*Header:*/
         header {
             flex-direction: row;
@@ -232,6 +240,7 @@
         }
         #interrogationBtn {
             margin-bottom: 0px;
+            margin-right: 10px;
         }
 
         /*Input field:*/
@@ -241,7 +250,12 @@
         input,
         .dots {
             font-size: 2.5em;
-        }       
+        }
+        input {
+            width: fit-content;
+            height: fit-content;
+        }
+
 
         /*Timer container:*/
         #buttonsBox {
@@ -261,6 +275,9 @@
         }
 
         /*Footer*/
+        footer{
+            margin-bottom: auto;
+        }
         #autorFoot,
         #githubFoot {
             font-size: small;
